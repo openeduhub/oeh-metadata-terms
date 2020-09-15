@@ -1,0 +1,30 @@
+@prefix oehlr: <http://w3id.org/openeduhub/learning-resource-terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+
+# Schema description
+
+oehlr: dcterms:creator ""@de ;
+    dcterms:description "Die OpenEduHub Spezifikation ist eine Sammlung von Eigenschaften, um Bildungsmaterialien zu beschreiben. Sie ergänzt die LRMI-Spezifikation (https://www.dublincore.org/specifications/lrmi/lrmi_1/), um nötige Eigenschaften für die Beschreibung von Ressourcen in der deutschen Bildungslandschaft"@de ;
+    dcterms:issued "2020-08-28"^^xsd:date ;
+    dcterms:title "OEH Learning Resource RDF Spezifikation"@de ;
+    dcterms:title "OEH Learning Resource RDF Specification"@en .
+
+# CLASSES
+
+# PROPERTIES
+
+oehlr:educationalContext a rdfs:Property ;
+    rdfs:label "Educational Context"@en ;
+    rdfs:label "Bildungsumfeld"@de ;
+    rdfs:comment "Die Bildungsstufe für die das Material empfohlen wird. Empfohlene Werte sind: 'elementarbereich', 'grundschule', 'sekundarstufe_1', 'sekundarstufe_2', 'berufliche_bildung', 'erwachsenenbildung', 'foederschule'"@de ;
+    rdfs:comment "The educational Context the material is recommended to be used in. Recommended values include 'elementarbereich', 'grundschule', 'sekundarstufe_1', 'sekundarstufe_2', 'berufliche_bildung', 'erwachsenenbildung', 'foederschule'"@en ;
+    schema:domainIncludes schema:CreativeWork ;
+    schema:rangeIncludes xsd:string, schema:DefinedTerm ;
+    rdfs:isDefinedBy <http://w3id.org/openeduhub/learning-resources-terms/> .
