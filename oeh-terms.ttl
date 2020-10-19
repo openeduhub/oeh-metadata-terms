@@ -1,4 +1,4 @@
-@prefix oehlr: <http://w3id.org/openeduhub/learning-resource-terms/> .
+@prefix oeh: <http://w3id.org/openeduhub/learning-resource-terms/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -10,7 +10,7 @@
 
 # Schema description
 
-oehlr: dcterms:creator ""@de ;
+oeh: dcterms:creator ""@de ;
     dcterms:description "Die OpenEduHub Spezifikation ist eine Sammlung von Eigenschaften, um Bildungsmaterialien zu beschreiben. Sie ergänzt die LRMI-Spezifikation (https://www.dublincore.org/specifications/lrmi/lrmi_1/), um nötige Eigenschaften für die Beschreibung von Ressourcen in der deutschen Bildungslandschaft"@de ;
     dcterms:issued "2020-08-28"^^xsd:date ;
     dcterms:title "OEH Learning Resource RDF Spezifikation"@de ;
@@ -20,11 +20,29 @@ oehlr: dcterms:creator ""@de ;
 
 # PROPERTIES
 
-oehlr:educationalContext a rdfs:Property ;
+oeh:educationalContext a rdfs:Property ;
     rdfs:label "Educational Context"@en ;
     rdfs:label "Bildungsumfeld"@de ;
-    rdfs:comment "Die Bildungsstufe für die das Material empfohlen wird. Empfohlene Werte sind: 'elementarbereich', 'grundschule', 'sekundarstufe_1', 'sekundarstufe_2', 'berufliche_bildung', 'erwachsenenbildung', 'foederschule'"@de ;
-    rdfs:comment "The educational Context the material is recommended to be used in. Recommended values include 'elementarbereich', 'grundschule', 'sekundarstufe_1', 'sekundarstufe_2', 'berufliche_bildung', 'erwachsenenbildung', 'foederschule'"@en ;
+    rdfs:comment "Gibt das Bildungsumfeld oder die Bildungsstufe innerhalb eines Bildungssystems an. Empfohlene Werte sind: 'elementarbereich', 'grundschule', 'sekundarstufe_1', 'sekundarstufe_2', 'berufliche_bildung', 'erwachsenenbildung', 'foederschule'"@de ;
+    rdfs:comment "Corresponds to the educational context of a given educational setting. Recommended values include 'elementarbereich', 'grundschule', 'sekundarstufe_1', 'sekundarstufe_2', 'berufliche_bildung', 'erwachsenenbildung', 'foederschule'"@en ;
     schema:domainIncludes schema:CreativeWork ;
     schema:rangeIncludes xsd:string, schema:DefinedTerm ;
-    rdfs:isDefinedBy <http://w3id.org/openeduhub/learning-resources-terms/> .
+    rdfs:isDefinedBy <http://w3id.org/openeduhub/learning-resource-terms/> .
+
+oeh:educationalNiveau a rdfs:Property ;
+    rdfs:label "Educational Niveau"@en ;
+    rdfs:label "Niveaustufen"@de ;
+    rdfs:comment "Gibt die Niveaustufen innerhalb eines Niveaustufenmodells an (Bsp. Berlin-Brandenburg)."@de ;
+    rdfs:comment "Corresponds to the educational niveau in a educational niveau model (e.g. Berlin-Brandenburg)."@en ;
+    schema:domainIncludes schema:CreativeWork ;
+    schema:rangeInclues xsd:string, schema:DefinedTerm ;
+    rdfs:isDefinedBy <http://w3id.org/openeduhub/learning-resource-terms/> .
+
+oeh:competenceLevel a rdfs:Property ;
+    rdfs:label "Competence Level"@en ;
+    rdfs:label "Kompetenzlevel"@de ;
+    rdfs:comment "Bezeichnet das Kompetenzlevel eines Items."@de ;
+    rdfs:comment "Describes the competence level of the respectiv item."@en ;
+    schema:domainIncludes schema:CreativeWork ;
+    schema:rangeInclues xsd:string, schema:DefinedTerm ;
+    rdfs:isDefinedBy <http://w3id.org/openeduhub/learning-resource-terms/> .
